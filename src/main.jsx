@@ -102,7 +102,142 @@ function FactoryPage(){return <Page kicker="MANUFACTURING PLATFORM" title="Our F
  <div className="location"><div><label>LOCATION</label><h2>Hargeisa, Somaliland</h2><p>The factory is planned to serve the Somaliland market while developing opportunities for regional distribution.</p><div className="locfacts"><span><MapPin/>Hargeisa</span><span><Globe2/>Regional ambition</span></div></div><div className="map"><MapPin size={40}/><b>NOOR AL HAYAT</b><span>Factory location</span></div></div>
  </Page>}
 
-function Contact(){return <Page kicker="GET IN TOUCH" title="Contact Us" text="For product, partnership, supplier and general enquiries, contact the Noor Al Hayat team."><div className="contact"><div className="contactcards"><ContactCard icon={<MapPin/>}t="LOCATION"x="Hargeisa, Somaliland"/><ContactCard icon={<Phone/>}t="TELEPHONE"x="+252 65 777 7021"/><ContactCard icon={<Mail/>}t="EMAIL"x="info@noralhayat.com"/></div><form onSubmit={e=>{e.preventDefault();alert("Your form is ready to connect to an email service.")}}><div className="row"><input placeholder="Your name"/><input type="email" placeholder="Email address"/></div><input placeholder="Subject"/><textarea rows="7" placeholder="Your message"/><button className="btn primary">Send Message <ArrowUpRight/></button></form></div></Page>}
+function Contact(){
+ const[status,setStatus]=useState("");
+ const[sending,setSending]=useState(false);
+
+ const onSubmit=async e=>{
+  e.preventDefault();
+  setSending(true);
+  setStatus("Sending message...");
+
+  try{
+   const formData=new FormData(e.currentTarget);
+
+   formData.append(
+    "access_key",
+    "12f9ae3f-622b-4d0a-9112-1b2f97badeb0"
+   );
+
+   formData.append(
+    "subject",
+    "New Contact Message - Noor Al Hayat Website"
+   );
+
+   const object=Object.fromEntries(formData);
+
+   const response=await fetch(
+    "https://api.web3forms.com/submit",
+    {
+     method:"POST",
+     headers:{
+      "Content-Type":"application/json",
+      Accept:"application/json"
+     },
+     body:JSON.stringify(object)
+    }
+   );
+
+   const result=await response.json();
+
+   if(result.success){
+    setStatus("Message sent successfully. Thank you!");
+    e.currentTarget.reset();
+   }else{
+    setStatus(
+     result.message ||
+     "Unable to send the message. Please try again."
+    );
+   }
+
+  }catch(error){
+   setStatus(
+    "Something went wrong. Please check your connection and try again."
+   );
+  }finally{
+   setSending(false);
+  }
+ };
+
+ return <Page
+  kicker="GET IN TOUCH"
+  title="Contact Us"
+  text="For product, partnership, supplier and general enquiries, contact the Noor Al Hayat team."
+ >
+  <div className="contact">
+
+   <div className="contactcards">
+    <ContactCard
+     icon={<MapPin/>}
+     t="LOCATION"
+     x="Hargeisa, Somaliland"
+    />
+
+    <ContactCard
+     icon={<Phone/>}
+     t="TELEPHONE"
+     x="+252 65 777 7021"
+    />
+
+    <ContactCard
+     icon={<Mail/>}
+     t="EMAIL"
+     x="info@noralhayat.com"
+    />
+   </div>
+
+   <form onSubmit={onSubmit}>
+
+    <div className="row">
+     <input
+      name="name"
+      required
+      placeholder="Your name"
+     />
+
+     <input
+      name="email"
+      type="email"
+      required
+      placeholder="Email address"
+     />
+    </div>
+
+    <input
+     name="subject"
+     required
+     placeholder="Subject"
+    />
+
+    <textarea
+     name="message"
+     required
+     rows="7"
+     placeholder="Your message"
+    />
+
+    <button
+     className="btn primary"
+     type="submit"
+     disabled={sending}
+    >
+     {sending ? "Sending..." : "Send Message"}
+     {!sending && <ArrowUpRight/>}
+    </button>
+
+    {status && (
+     <p style={{
+      marginTop:"14px",
+      fontWeight:600
+     }}>
+      {status}
+     </p>
+    )}
+
+   </form>
+  </div>
+ </Page>
+}
 function ContactCard({icon,t,x}){return <div className="contactcard"><div className="ficon">{icon}</div><div><label>{t}</label><b>{x}</b></div></div>}
 
 function Page({kicker,title,text,children}){return <><section className="pagehero"><div className="wrap"><label>{kicker}</label><h1>{title}</h1><p>{text}</p></div></section><section className="section"><div className="wrap">{children}</div></section></>}
