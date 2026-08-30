@@ -139,7 +139,14 @@ textarea{resize:vertical}
 
 footer{background:#05352b;color:#a9c1b9;padding-top:60px}
 .footerGrid{display:grid;grid-template-columns:2fr 1fr 1.1fr 1.2fr;gap:45px;padding-bottom:52px}
-.footerBrand img{width:245px;height:60px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1)}
+.footerBrand img{
+  width:220px;
+  height:auto;
+  max-height:85px;
+  object-fit:contain;
+  object-position:left center;
+  filter:none;
+}
 .footerBrand p{max-width:310px;font-size:12px;line-height:1.7}
 footer h4{font-size:9px;letter-spacing:1.8px;color:#8cb0a5;margin:2px 0 18px}
 footer button,footer span{display:block;color:#a9c1b9;font-size:12px;margin:10px 0;text-align:left}
