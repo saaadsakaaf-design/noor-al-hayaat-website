@@ -27,8 +27,11 @@ img{max-width:100%;display:block}
 .eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;color:var(--green)}
 .lightText{color:#d9ece6}
 .eyebrow span{display:inline-block;width:28px;height:1px;background:var(--gold2);vertical-align:middle;margin-right:9px}
-.hero h1,.pageTitle h1{font:600 67px/1.02 "Playfair Display",serif;margin:20px 0 18px}
-.hero h1 em{font-style:italic;color:#b9e1d3}
+.hero h1{font:600 clamp(46px,4.35vw,55px)/1.03 "Playfair Display",serif;margin:20px 0 18px;letter-spacing:-1.1px;max-width:1120px}
+.hero h1 br{display:none}
+.hero h1 em{display:block;font-style:italic;color:#b9e1d3;margin-top:5px;letter-spacing:-.5px}
+.pageTitle h1{font:600 60px/1.02 "Playfair Display",serif;margin:17px 0}
+
 .hero p{max-width:650px;font-size:17px;line-height:1.75;color:#d8e8e3;margin:0}
 .actions{display:flex;gap:12px;margin-top:31px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:8px;font-weight:800;transition:.2s}
