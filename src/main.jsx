@@ -75,7 +75,7 @@ function Home({go}){
       <div className="heroOverlay"/>
       <div className="wrap heroContent">
         <div className="eyebrow lightText"><span/> SOMALILAND • PHARMACEUTICAL MANUFACTURING</div>
-        <h1>Manufacturing Health,<br/><em>Delivering Trust.</em></h1>
+        <h1>Noor Al Hayaat Pharmaceutical Industries<br/><em>Manufacturing Health, Delivering Trust.</em></h1>
         <p>Building local pharmaceutical manufacturing capacity through focused production of quality tablets and capsules, professional packaging and a quality-first approach.</p>
         <div className="actions">
           <button className="btn gold" onClick={()=>go("products")}>Explore Our Products <span>↗</span></button>
