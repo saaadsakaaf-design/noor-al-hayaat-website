@@ -142,7 +142,7 @@ footer{background:#05352b;color:#a9c1b9;padding-top:60px}
 .footerBrand img{
   width:220px;
   height:auto;
-  max-height:85px;
+  max-height:90px;
   object-fit:contain;
   object-position:left center;
   filter:none;
