@@ -6,8 +6,8 @@ const A = "/assets/";
 
 const products = [
   { key:"NEWMMOL", name:"NEWMOL", generic:"Paracetamol", strength:"500 mg", form:"Tablets", pack:"100 tablets / box", image:"product-newmol.jpg", tone:"blue" },
-  { key:"AMOXII", name:"Amoxii", generic:"Amoxicillin", strength:"500 mg", form:"Capsules", pack:"100 capsules / box", image:null, tone:"brown" },
-  { key:"NEWUXIM", name:"Newuxim", generic:"Esomeprazole", strength:"40 mg", form:"Capsules", pack:"30 capsules / box", image:null, tone:"purple" },
+  { key:"AMOXII", name:"Amoxii", generic:"Amoxicillin", strength:"500 mg", form:"Capsules", pack:"100 capsules / box", image:"product-amoxicillin.jpeg", tone:"brown" },
+  { key:"NEWUXIM", name:"Newuxim", generic:"Esomeprazole", strength:"40 mg", form:"Capsules", pack:"30 capsules / box", image:"product-newuxim.jpeg", tone:"purple" },
   { key:"METRONIDAZOLE", name:"METRONIDAZOLE", generic:"Metronidazole", strength:"500 mg", form:"Tablets", pack:"100 tablets / box", image:"product-metanidazole.jpg", tone:"gold" },
   { key:"DICLOFENAC", name:"DICLOFENAC", generic:"Diclofenac", strength:"50 mg", form:"Tablets", pack:"100 tablets / box", image:"product-diclofenac.jpg", tone:"red" },
   { key:"AZITHROMYCIN", name:"AZITHROMYCIN", generic:"Azithromycin", strength:"500 mg", form:"Tablets", pack:"10 tablets / box", image:"product-azithromycin.jpg", tone:"green" },
