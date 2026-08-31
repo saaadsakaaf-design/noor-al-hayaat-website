@@ -17,8 +17,8 @@ const products = [
 ];
 
 const factoryImages = [
-  ["factory-exterior.jpg","Our Facility","Modern pharmaceutical manufacturing facility concept."],
-  ["factory-layout.jpg","Smart Layout","Efficient workflow from raw materials to finished products."],
+  ["factory-exterior.jpeg","Our Facility","Modern pharmaceutical manufacturing facility concept."],
+  ["factory-layout.jpeg","Smart Layout","Efficient workflow from raw materials to finished products."],
   ["factory-production.jpg","Production","Controlled production areas designed for oral solid dosage forms."],
   ["factory-tablet-line.jpg","Compression","Tablet compression with controlled process parameters."],
   ["factory-line.jpg","Packaging Line","Blister packaging and finished-product handling."],
