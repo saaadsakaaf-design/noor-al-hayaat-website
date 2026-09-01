@@ -305,7 +305,7 @@ function Footer({go}){
       <div><h4>OUR PRODUCTS</h4><span>Tablets</span><span>Capsules</span><span>Essential Medicines</span><span>Local Manufacturing</span></div>
       <div><h4>CONTACT US</h4><span>+252 65 777 7021</span><span>info@noralhayat.com</span><span>Hargeisa, Somaliland</span></div>
     </div>
-    <div className="footerBottom"><span>© 2026 Noor Al Hayaat Pharmaceutical Industries. All rights reserved.</span><b>Proudly Made in Somaliland</b></div>
+    <div className="footerBottom"><span>© 2026 Noor Al Hayaat Pharmaceutical Industries. All rights reserved.</span></div>
   </footer>;
 }
 
