@@ -262,7 +262,9 @@ function Contact(){
       fd.append("access_key","12f9ae3f-622b-4d0a-9112-1b2f97badeb0");
       fd.append("from_name","Noor Al Hayaat Website");
       const response = await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:fd});
-      const result = await response.json();
+      const text = await response.text();
+let result = {};
+try { result = JSON.parse(text); } catch {}
       if(result.success){ e.currentTarget.reset(); setStatus("Message sent successfully. Thank you."); }
       else setStatus(result.message || "Unable to send the message. Please try again.");
     }catch(err){ setStatus("Something went wrong. Please check your connection and try again."); }
