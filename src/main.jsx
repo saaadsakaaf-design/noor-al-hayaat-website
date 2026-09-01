@@ -255,22 +255,56 @@ function Contact(){
   const [sending,setSending]=useState(false);
   const [status,setStatus]=useState("");
   async function submit(e){
-    e.preventDefault();
-    setSending(true); setStatus("Sending message…");
-    try{
-      const fd = new FormData(e.currentTarget);
-      fd.append("access_key","12f9ae3f-622b-4d0a-9112-1b2f97badeb0");
-      fd.append("from_name","Noor Al Hayaat Website");
-     await fetch("https://api.web3forms.com/submit",{
-  method:"POST",
-  body:fd
-});
+  e.preventDefault();
+  setSending(true);
+  setStatus("Sending message...");
 
-e.currentTarget.reset();
-setStatus("Message sent successfully. Thank you.");
-    }catch(err){ setStatus("Something went wrong. Please check your connection and try again."); }
-    finally{ setSending(false); }
+  try{
+    const fd = new FormData(e.currentTarget);
+
+    fd.append(
+      "access_key",
+      "12f9ae3f-622b-4d0a-9112-1b2f97badeb0"
+    );
+
+    fd.append(
+      "from_name",
+      "Noor Al Hayaat Website"
+    );
+
+    const object = Object.fromEntries(fd);
+    const json = JSON.stringify(object);
+
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: json
+      }
+    );
+
+    const result = await response.json();
+
+    if(result.success){
+      e.currentTarget.reset();
+      setStatus("Message sent successfully. Thank you.");
+    }else{
+      setStatus(
+        result.message ||
+        "Unable to send the message. Please try again."
+      );
+    }
+
+  }catch(err){
+    setStatus("Something went wrong. Please try again.");
+  }finally{
+    setSending(false);
   }
+}
   return <PageHero kicker="GET IN TOUCH" title="Contact Us" text="For product, partnership, supplier and general enquiries, contact the Noor Al Hayaat team.">
     <div className="contactGrid">
       <div className="contactInfo">
