@@ -11,7 +11,7 @@ img{max-width:100%;display:block}
 .header{height:105px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
 .nav{height:100%;display:flex;align-items:center;justify-content:space-between}
 .brand{padding:0;display:flex;align-items:center}
-.brand img{width:260px;height:150px;object-fit:contain;object-position:left center}
+.brand img{width:260px;height:180px;object-fit:contain;object-position:left center}
 .navLinks{display:flex;align-items:center;gap:2px}
 .navLinks button{padding:12px 13px;color:#52625c;font-size:13px;font-weight:700}
 .navLinks button:hover,.navLinks button.active{color:var(--green)}
