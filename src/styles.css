@@ -140,7 +140,7 @@ textarea{resize:vertical}
 footer{background:#05352b;color:#a9c1b9;padding-top:60px}
 .footerGrid{display:grid;grid-template-columns:2fr 1fr 1.1fr 1.2fr;gap:45px;padding-bottom:52px}
 .footerBrand img{
-    width:360px;
+    width:400px;
     height:auto;
     max-height:130px;
     object-fit:contain;
