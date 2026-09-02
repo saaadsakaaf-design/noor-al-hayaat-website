@@ -256,6 +256,8 @@ function Contact(){
   const [status,setStatus]=useState("");
   async function submit(e){
   e.preventDefault();
+
+const form = e.currentTarget;
   setSending(true);
   setStatus("Sending message...");
 
@@ -278,7 +280,7 @@ function Contact(){
       body:fd
     });
 
-    e.currentTarget.reset();
+    form.reset();
     setStatus("Message sent successfully. Thank you.");
 
   }catch(err){
