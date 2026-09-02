@@ -272,32 +272,14 @@ function Contact(){
       "Noor Al Hayaat Website"
     );
 
-    const object = Object.fromEntries(fd);
-    const json = JSON.stringify(object);
+    await fetch("https://api.web3forms.com/submit",{
+      method:"POST",
+      mode:"no-cors",
+      body:fd
+    });
 
-    const response = await fetch(
-      "https://api.web3forms.com/submit",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: json
-      }
-    );
-
-    const result = await response.json();
-
-    if(result.success){
-      e.currentTarget.reset();
-      setStatus("Message sent successfully. Thank you.");
-    }else{
-      setStatus(
-        result.message ||
-        "Unable to send the message. Please try again."
-      );
-    }
+    e.currentTarget.reset();
+    setStatus("Message sent successfully. Thank you.");
 
   }catch(err){
     setStatus("Something went wrong. Please try again.");
