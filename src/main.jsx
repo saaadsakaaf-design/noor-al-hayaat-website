@@ -321,7 +321,7 @@ function PageHero({kicker,title,text,children}){
 function Footer({go}){
   return <footer>
     <div className="wrap footerGrid">
-      <div className="footerBrand"><img src={A+"noor-al-hayaat-logo.png"} alt="Noor Al Hayaat"/><p>Manufacturing high-quality medicines that support healthier communities and stronger local pharmaceutical capacity.</p></div>
+      <div className="footerBrand"><img src={"/assets/noor-al-hayaat-logo-footer.png"} alt="Noor Al Hayaat"/><p>Manufacturing high-quality medicines that support healthier communities and stronger local pharmaceutical capacity.</p></div>
       <div><h4>QUICK LINKS</h4><button onClick={()=>go("home")}>Home</button><button onClick={()=>go("products")}>Products</button><button onClick={()=>go("factory")}>Our Factory</button><button onClick={()=>go("about")}>About Us</button><button onClick={()=>go("quality")}>Quality</button></div>
       <div><h4>OUR PRODUCTS</h4><span>Tablets</span><span>Capsules</span><span>Essential Medicines</span><span>Local Manufacturing</span></div>
       <div><h4>CONTACT US</h4><span>+252 65 777 7021</span><span>info@noralhayat.com</span><span>Hargeisa, Somaliland</span></div>
