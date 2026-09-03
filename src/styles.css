@@ -182,3 +182,8 @@ footer button,footer span{display:block;color:#a9c1b9;font-size:12px;margin:10px
  .ctaBox,.qualityCall{flex-direction:column;align-items:flex-start}.footerBottom{flex-direction:column}
  .productVisual{height:235px}
 }
+/* Footer headings */
+footer .footerGrid h4{
+  color:#d4af37 !important;
+  -webkit-text-fill-color:#d4af37 !important;
+}
